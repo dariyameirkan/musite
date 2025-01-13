@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Musicap</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Подключение стилей -->
+    <style>
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff; /* Белый фон */
+            color: #666666; /* Светлый текст */
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex; /* Используем flexbox для выравнивания */
+            align-items: center; /* Центрируем по вертикали */
+            padding: 20px; /* Отступы внутри заголовка */
+            background-color: #3C3C3C; /* Темный фон для заголовка */
+        }
+
+        .logo {
+            margin-right: 20px; /* Отступ между логотипом и названием */
+        }
+
+        .logo img {
+            width: 50px; /* Ширина логотипа */
+            height: auto; /* Автоматическая высота */
+        }
+
+        h1 {
+            color: #A832B0; /* Фиолетовый цвет для заголовка */
+            margin: 0; /* Убираем отступы */
+        }
+
+        .container {
+            text-align: center; /* Центрирование текста */
+            margin-top: 50px; /* Отступ сверху */
+        }
+
+        h2 {
+            margin: 30px 0; /* Отступ сверху и снизу для заголовка */
+        }
+
+        .buttons {
+            display: flex; /* Используем flexbox для кнопок */
+            justify-content: center; /* Центрируем кнопки по горизонтали */
+            margin-top: 40px; /* Увеличиваем отступ между заголовком и кнопками */
+        }
+
+        .button {
+            display: inline-block; /* Инлайн-блок для кнопок */
+            padding: 10px 15px; /* Внутренний отступ */
+            color: white; /* Белый текст для кнопок */
+            background-color: #A832B0; /* Фиолетовый фон кнопок */
+            border: none; /* Без рамки */
+            border-radius: 5px; /* Закругленные углы */
+            text-align: center; /* Выравнивание по центру */
+            text-decoration: none; /* Убираем подчеркивание */
+            cursor: pointer; /* Курсор в виде руки */
+            margin: 10px; /* Отступ между кнопками */
+        }
+
+        .button:hover {
+            background-color: #940E66; /* Темный фиолетовый при наведении */
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="logo">
+        <img src="log" alt="Musicap Logo"> <!-- Укажите путь к вашему логотипу -->
+    </div>
+    <h1>Musicap</h1>
+</header>
+<div class="container">
+    <h2>Welcome to Musicap</h2>
+    <div class="buttons">
+        <a href="/api/users/sign-in" class="button">Sign In</a>
+        <a href="/api/users/sign-up" class="button">Sign Up</a>
+    </div>
+</div>
+</body>
+</html>
