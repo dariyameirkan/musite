@@ -1,77 +1,91 @@
-/* Общие стили */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #2C2C2C; /* Темный фон */
-    color: white; /* Белый текст */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-    max-width: 600px; /* Максимальная ширина контейнера */
-    margin: 50px auto; /* Центрирование контейнера */
-    padding: 20px;
-    background-color: #3C3C3C; /* Темный серый фон контейнера */
-    border-radius: 8px; /* Закругленные углы */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Тень */
+    max-width: 400px;
+    width: 100%;
 }
 
-header h1 {
+.form-container {
+    background-color: #1a2b3c;
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
     text-align: center;
-    color: #A832B0; /* Фиолетовый цвет для заголовков */
+    margin-bottom: 20px;
 }
 
 .form-group {
-    margin-bottom: 15px; /* Отступ между группами */
+    margin-bottom: 20px;
 }
 
 label {
-    display: block; /* Блочный элемент */
-    margin-bottom: 5px; /* Отступ снизу */
-    color: #A832B0; /* Фиолетовый цвет для текста метки */
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="password"] {
-    width: 100%; /* Ширина 100% */
-    padding: 10px; /* Внутренний отступ */
-    border: 1px solid #ddd; /* Светло-серая рамка */
-    border-radius: 4px; /* Закругленные углы */
-    background-color: #4C4C4C; /* Темно-серый фон полей ввода */
-    color: white; /* Белый текст в полях ввода */
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
-    border-color: #A832B0; /* Фиолетовая рамка при фокусе */
+input:focus {
+    border-color: #5d8df4;
+    outline: none;
 }
 
-.button {
-    display: inline-block; /* Инлайн-блок для кнопок */
-    padding: 10px 15px; /* Внутренний отступ */
-    color: #A832B0; /* Фиолетовый текст для кнопок */
-    background-color: white; /* Белый фон кнопок */
-    border: none; /* Без рамки */
-    border-radius: 5px; /* Закругленные углы */
-    text-align: center; /* Выравнивание по центру */
-    text-decoration: none; /* Убираем подчеркивание */
-    cursor: pointer; /* Курсор в виде руки */
-    margin-top: 10px; /* Отступ сверху */
-    width: 100%; /* Ширина кнопок 100% */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #5d8df4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.button:hover {
-    background-color: #f0f0f0; /* Изменение фона при наведении */
+button:hover {
+    background-color: #4b77d4;
 }
 
-.buttons {
-    text-align: center; /* Центрирование кнопок */
-    margin-top: 20px; /* Добавить отступ сверху для пространства */
+.form-footer {
+    text-align: center;
+    margin-top: 15px;
 }
 
-/* Стили для ошибки */
+.form-footer a {
+    color: #5d8df4;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
 .error {
-    color: red; /* Красный цвет для сообщений об ошибках */
-    text-align: center; /* Центрирование текста ошибки */
-    margin-top: 10px; /* Отступ сверху */
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
 }

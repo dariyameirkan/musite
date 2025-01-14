@@ -3,37 +3,32 @@ package com.example.crud.Model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "news") // Название таблицы в базе данных
+@Table(name = "news")
 public class News {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false) // Поле для изображения
-    private String image;
-
-    @Column(nullable = false) // Поле для заголовка
+    @Column(nullable = false)
     private String title;
 
-    @Column(nullable = false, length = 500) // Поле для текста новости, с ограничением в 500 символов
-    private String text;
+    @Column(nullable = false, columnDefinition = "TEXT")
+    private String content;
 
-    // Геттеры и сеттеры
+    @Column(nullable = false)
+    private String imageUrl;
 
+    @Column(nullable = false)
+    private int likesCount = 0;
+
+    // Getters and Setters
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public String getTitle() {
@@ -44,11 +39,27 @@ public class News {
         this.title = title;
     }
 
-    public String getText() {
-        return text;
+    public String getContent() {
+        return content;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public int getLikesCount() {
+        return likesCount;
+    }
+
+    public void setLikesCount(int likesCount) {
+        this.likesCount = likesCount;
     }
 }

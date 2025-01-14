@@ -1,10 +1,23 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>News</title>
 </head>
 <body>
-
+<h1>Latest News</h1>
+<div class="news-grid">
+    <div class="card" th:each="news : ${newsList}">
+        <img th:src="${news.imageUrl}" alt="News Image" class="news-image">
+        <h3 th:text="${news.title}"></h3>
+        <p th:text="${news.content}"></p>
+        <form th:action="@{'/news/like/' + ${news.id}}" method="post">
+            <button type="submit" class="like-btn">
+                ❤️ <span th:text="${news.likesCount}"></span>
+            </button>
+        </form>
+    </div>
+</div>
 </body>
 </html>

@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - Musicap</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
 <div class="container">
-    <header>
+    <div class="form-container">
         <h1>Sign Up</h1>
-    </header>
-    <form action="/api/users/register" method="POST">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+        <form action="/api/users/register" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Choose a username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+            </div>
+            <button type="submit" class="btn">Create Account</button>
+        </form>
+        <div class="form-footer">
+            <p>Already have an account? <a href="/api/users/sign-in">Sign In</a></p>
         </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email" required>
+        <div class="error">
+            <p th:if="${error}" th:text="${error}"></p>
         </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit" class="button">Create Account</button>
-    </form>
-    <div class="buttons">
-        <a href="/api/users/sign-in" class="button">Already have an account? Sign In</a>
-    </div>
-    <div class="error">
-        <!-- Здесь можно вывести сообщения об ошибках при необходимости -->
     </div>
 </div>
 </body>

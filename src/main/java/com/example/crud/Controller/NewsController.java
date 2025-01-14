@@ -5,10 +5,7 @@ import com.example.crud.Service.NewsService; // Подразумевается, 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping; // Импортируем RequestMapping
-
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/news")
@@ -17,11 +14,15 @@ public class NewsController {
     @Autowired
     private NewsService newsService;
 
-    // Страница со всеми новостями
     @GetMapping
-    public String getAllNews(Model model) {
-        List<News> newsList = newsService.getAllNews(); // Получаем все новости
-        model.addAttribute("news", newsList);
-        return "news"; // Возвращает шаблон "news.html"
+    public String getNews(Model model) {
+        model.addAttribute("newsList", newsService.getAllNews());
+        return "news";
+    }
+
+    @PostMapping("/like/{id}")
+    public String likeNews(@PathVariable Long id) {
+        newsService.likeNews(id);
+        return "redirect:/news";
     }
 }

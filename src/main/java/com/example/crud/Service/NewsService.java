@@ -7,14 +7,20 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 public class NewsService {
 
     @Autowired
     private NewsRepository newsRepository;
 
-    // Получение всех новостей
     public List<News> getAllNews() {
-        return newsRepository.findAll(); // Предполагается, что findAll() возвращает все новости
+        return newsRepository.findAll();
+    }
+
+    public void likeNews(Long id) {
+        News news = newsRepository.findById(id).orElseThrow(() -> new RuntimeException("News not found"));
+        news.setLikesCount(news.getLikesCount() + 1);
+        newsRepository.save(news);
     }
 }

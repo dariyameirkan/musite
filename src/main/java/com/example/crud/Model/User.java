@@ -16,8 +16,10 @@ public class User {
     @Column(nullable = false) // Пароль не может быть null
     private String password;
 
-    // Геттеры и сеттеры
+    @Column(nullable = false, unique = true) // Email должен быть уникальным и не null
+    private String email;
 
+    // Геттеры и сеттеры
     public Long getId() {
         return id;
     }
@@ -40,5 +42,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
